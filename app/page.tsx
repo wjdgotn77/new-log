@@ -1,13 +1,17 @@
-import { Inter } from "next/font/google";
+import Image from "next/image";
 
-import NavBar from "@/components/NavBar";
-
-const inter = Inter({ subsets: ["latin"] });
+import homeImg from "@/public/home.jpg";
 
 export default function Home() {
   return (
-    <div className={inter.className}>
-      <NavBar />
+    <div className="relative h-screen">
+      <Image
+        src={homeImg}
+        fill
+        className="object-cover mt-[20px]"
+        placeholder="blur"
+        alt="home"
+      />
     </div>
   );
 }

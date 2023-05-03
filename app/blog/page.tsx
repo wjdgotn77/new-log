@@ -10,12 +10,13 @@ export default function BlogPage() {
   );
 
   return (
-    <div className="flex flex-col items-center gap-4">
-      Blog Page
-      <SearchBar />
-      {posts.map((post, idx) => (
-        <PostCard key={idx} {...post} />
-      ))}
+    <div className="flex flex-col">
+      Blog Page <SearchBar />
+      <div className="pt-[20px]">
+        {posts.map((post, idx) => (
+          <PostCard key={idx} {...post} />
+        ))}
+      </div>
     </div>
   );
 }

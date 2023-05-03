@@ -1,6 +1,6 @@
 export default function SearchBar() {
   return (
-    <div className="max-w-md w-md h-full flex items-center justify-center gap-[10px]">
+    <div className="flex items-center gap-[10px] pt-[10px]">
       <svg
         width="22"
         height="22"
