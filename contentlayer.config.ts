@@ -1,29 +1,30 @@
 import { defineDocumentType, makeSource } from "contentlayer/source-files";
 
-export const Post = defineDocumentType(() => ({
-  name: "Post",
+export const Notes = defineDocumentType(() => ({
+  name: "Notes",
   filePathPattern: `**/*.md`,
+  contentType: "mdx",
   fields: {
     title: {
       type: "string",
-      description: "The title of the post",
+      description: "The title of the notes",
       required: true,
     },
     date: {
       type: "date",
-      description: "The date of the post",
+      description: "The date of the notes",
       required: true,
     },
   },
   computedFields: {
     url: {
       type: "string",
-      resolve: (post) => `/posts/${post._raw.flattenedPath}`,
+      resolve: (notes) => `/notes/${notes._raw.flattenedPath}`,
     },
   },
 }));
 
 export default makeSource({
-  contentDirPath: "posts",
-  documentTypes: [Post],
+  contentDirPath: "notes",
+  documentTypes: [Notes],
 });
